@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
-import { FindAllDeliveriesUseCase } from "./FindAllDeliveriesUseCase";
+import { FindAllDeliveriesClientUseCase } from "./FindAllDeliveriesClientUseCase";
 
 
 
-export class FindAllDeliveriesController{
+export class FindAllDeliveriesClientController{
     async handle(request: Request, response: Response){
         const {id_client} = request;
         
-        const findAllDeliveriesUseCase = new FindAllDeliveriesUseCase();
+        const findAllDeliveriesUseCase = new FindAllDeliveriesClientUseCase();
 
         const deliveries = await findAllDeliveriesUseCase.execute(id_client);
 

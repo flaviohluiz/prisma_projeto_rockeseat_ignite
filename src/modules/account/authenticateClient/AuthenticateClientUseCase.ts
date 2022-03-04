@@ -20,13 +20,13 @@ export class AuthenticateClientUseCase {
 
         if(!client) {
             throw new Error ("Username or password invalid!");
-        }
+        };
 
         const passwordMatch = await compare(password, client.password);
 
         if(!passwordMatch) {
             throw new Error ("Username or password invalid!");
-        }
+        };
 
         const token = sign({username}, "1ea74cfadacdec4db8badd65b18fd42a", {
             subject: client.id,
