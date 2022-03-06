@@ -19,8 +19,8 @@ describe("Authenticate Deliveryman", () => {
         deleteDeliverymanUseCase = new DeleteDeliverymanUseCase();
         
         deliveryman = {
-            username: "AuthenticateDeliveryman",
-            password: "AuthenticateDeliveryman",
+            username: "authenticateDeliveryman",
+            password: "authenticateDeliveryman",
         }
     });
     
@@ -33,14 +33,14 @@ describe("Authenticate Deliveryman", () => {
             password: deliveryman.password,
         });
 
-        //expect(deliverymanAuthenticate).toHaveProperty("string");
+        expect(deliverymanAuthenticate).toHaveProperty("token");
     });
 
     it("should not be able to authenticate an nonexistent deliveryman", () => {
         expect(async () => {
             await authenticateDeliverymanUseCase.execute({
-                username: "FalseDeliveryman",
-                password: "FalseDeliveryman",
+                username: "falseDeliveryman",
+                password: "falseDeliveryman",
             });
         }).rejects.toBeInstanceOf(Error);
     });
@@ -50,7 +50,7 @@ describe("Authenticate Deliveryman", () => {
 
             await authenticateDeliverymanUseCase.execute({
                 username: deliveryman.username,
-                password: "IncorrectPassword",
+                password: "incorrectPassword",
             })
         }).rejects.toBeInstanceOf(Error);
     });

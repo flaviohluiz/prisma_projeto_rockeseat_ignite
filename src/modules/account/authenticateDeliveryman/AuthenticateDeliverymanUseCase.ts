@@ -8,8 +8,15 @@ interface IAuthenticateDeliveryman{
     password: string;
 }
 
+interface IResponse{
+    deliveryman:{
+        username: string,
+    },
+    token: string,
+}
+
 export class AuthenticateDeliverymanUseCase {
-    async execute({username, password}: IAuthenticateDeliveryman) {
+    async execute({username, password}: IAuthenticateDeliveryman): Promise<IResponse> {
 
         const deliveryman = await prisma.deliveryman.findFirst({
             where: {
@@ -32,7 +39,14 @@ export class AuthenticateDeliverymanUseCase {
             expiresIn: "1d",
         });
 
-        return token;
+        const tokenReturn: IResponse = {
+            token, 
+            deliveryman: {
+                username: deliveryman.username,                
+            }
+        }
+
+        return tokenReturn;
     }
 }
 

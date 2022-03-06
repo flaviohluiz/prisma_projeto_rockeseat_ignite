@@ -17,8 +17,8 @@ describe("Authenticate Client", () => {
         deleteClientUseCase = new DeleteClientUseCase();
         
         client = {
-            username: "AuthenticateClient",
-            password: "AuthenticateClient",
+            username: "authenticateClient",
+            password: "authenticateClient",
         }
     });
     
@@ -36,11 +36,9 @@ describe("Authenticate Client", () => {
         const clientAuthenticate = await authenticateClientUseCase.execute({
             username: client.username,
             password: client.password,
-        });        
-        
-        //console.log(clientAuthenticate);
+        });
 
-        //expect(clientAuthenticate).toHaveProperty("string");        
+        expect(clientAuthenticate).toHaveProperty("token");        
 
         //await deleteClientUseCase.execute(clientCreated.id);
     });
@@ -48,8 +46,8 @@ describe("Authenticate Client", () => {
     it("should not be able to authenticate an nonexistent client", () => {
         expect(async () => {
             await authenticateClientUseCase.execute({
-                username: "FalseClient",
-                password: "FalseClient",
+                username: "falseClient",
+                password: "falseClient",
             });
         }).rejects.toBeInstanceOf(Error);
     });
@@ -63,7 +61,7 @@ describe("Authenticate Client", () => {
 
             await authenticateClientUseCase.execute({
                 username: client.username,
-                password: "IncorrectPassword",
+                password: "incorrectPassword",
             })
         }).rejects.toBeInstanceOf(Error);
     });

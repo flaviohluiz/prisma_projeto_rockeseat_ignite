@@ -9,8 +9,16 @@ interface IAuthenticateClient{
     password: string;
 }
 
+interface IResponse {
+    client: {
+        username: string,
+    },
+
+    token: string;
+}
+
 export class AuthenticateClientUseCase {
-    async execute({username, password}: IAuthenticateClient) {
+    async execute({username, password}: IAuthenticateClient): Promise<IResponse> {
 
         const client = await prisma.clients.findFirst({
             where: {
@@ -33,7 +41,14 @@ export class AuthenticateClientUseCase {
             expiresIn: "1d",
         });
 
-        return token;
+        const tokenReturn: IResponse = {
+            token, 
+            client: {
+                username: client.username,                
+            }
+        }
+
+        return tokenReturn;
     }
 }
 

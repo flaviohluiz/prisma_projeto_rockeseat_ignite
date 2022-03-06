@@ -13,8 +13,8 @@ describe("Create Client", () => {
         createClientUseCase = new CreateClientUseCase();
         deleteClientUseCase = new DeleteClientUseCase();
         client = {
-            username: "CreateClient",
-            password: "CreateClient"
+            username: "createClient",
+            password: "createClient"
         };    
     });
 

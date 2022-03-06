@@ -10,6 +10,6 @@ export class DeleteDeliverymanController {
 
         await deleteDeliverymanUseCase.execute(id_deliveryman);
 
-        return response.status(204).json({ message: "Deliveryman deleted!"});
+        return response.status(204).send();
     };
 }

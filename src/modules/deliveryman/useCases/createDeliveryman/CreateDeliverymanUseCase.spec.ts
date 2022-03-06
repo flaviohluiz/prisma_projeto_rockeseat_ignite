@@ -13,8 +13,8 @@ describe("Create Deliveryman", () => {
         createDeliverymanUseCase = new CreateDeliverymanUseCase();
         deleteDeliverymanUseCase = new DeleteDeliverymanUseCase();
         deliveryman = {
-            username: "CreateDeliveryman",
-            password: "CreateDeliveryman"
+            username: "createDeliveryman",
+            password: "createDeliveryman"
         };
     });
 

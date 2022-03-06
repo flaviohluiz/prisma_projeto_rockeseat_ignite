@@ -9,6 +9,6 @@ export class DeleteClientController {
 
         await deleteClientUseCase.execute(id_client);
 
-        return response.status(204).json({ message: "Client deleted!"});
+        return response.status(204).send();
     };
 };
