@@ -43,9 +43,8 @@ describe("Create Client", () => {
         
     });
 
-    afterAll(() => {      
-        
-        deleteClientUseCase.execute(clientCreated.id);
+    afterAll(async () => {       
+        await deleteClientUseCase.execute(clientCreated.id);
     });
 });
 

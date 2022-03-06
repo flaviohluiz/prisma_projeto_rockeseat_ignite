@@ -42,7 +42,7 @@ describe("Create Deliveryman", () => {
     });
 
 
-    afterAll(() => {
-        deleteDeliverymanUseCase.execute(deliverymanCreated.id);
+    afterAll(async () => {
+        await deleteDeliverymanUseCase.execute(deliverymanCreated.id);
     });
 });

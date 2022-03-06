@@ -66,8 +66,8 @@ describe("Authenticate Client", () => {
         }).rejects.toBeInstanceOf(Error);
     });
 
-    afterAll(() => {
-        deleteClientUseCase.execute(clientCreated.id);
+    afterAll(async () => {
+        await deleteClientUseCase.execute(clientCreated.id);
     });
 });
 

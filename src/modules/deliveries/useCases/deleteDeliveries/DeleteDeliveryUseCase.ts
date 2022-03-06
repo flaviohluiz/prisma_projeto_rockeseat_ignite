@@ -6,7 +6,7 @@ export class DeleteDeliveryUseCase {
         const result = prisma.deliveries.delete({
             where: {
                 id: id_delivery, 
-            }
+            },
         });
         return result
     };

@@ -55,7 +55,7 @@ describe("Authenticate Deliveryman", () => {
         }).rejects.toBeInstanceOf(Error);
     });
 
-    afterAll(() => {
-        deleteDeliverymanUseCase.execute(deliverymanCreated.id);
+    afterAll(async () => {
+        await deleteDeliverymanUseCase.execute(deliverymanCreated.id);
     });
 });
