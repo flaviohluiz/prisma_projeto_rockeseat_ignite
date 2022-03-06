@@ -34,6 +34,8 @@ export class CreateDeliverymanUseCase{
     }
 }
 
+export {ICreateDeliveryman};
+
 // Validar o entregador
 // Criptografar a senha 
 // Salvar o entregador

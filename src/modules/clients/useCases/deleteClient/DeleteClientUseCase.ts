@@ -8,7 +8,6 @@ export class DeleteClientUseCase {
             },
         });
         
-        return result;  
-        
+        return result;          
     };
 };

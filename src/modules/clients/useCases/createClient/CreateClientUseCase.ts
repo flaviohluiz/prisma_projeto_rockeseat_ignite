@@ -34,6 +34,8 @@ export class CreateClientUseCase{
     }
 }
 
+export {ICreateClient}
+
 // Validar o usuário
 // Criptografar a senha 
 // Salvar o cliente

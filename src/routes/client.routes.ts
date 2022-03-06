@@ -2,7 +2,7 @@ import { Router } from "express";
 import { ensureAuthenticateClient } from "../middlewares/ensureAuthenticateClient";
 import { authenticateClientController } from "../modules/account/authenticateClient";
 import { createClientController } from "../modules/clients/useCases/createClient";
-import { findAllDeliveriesClient } from "../modules/clients/useCases/createClient/findAllDeliveries";
+import { findAllDeliveriesClient } from "../modules/clients/useCases/findAllDeliveries";
 import { deleteClientController } from "../modules/clients/useCases/deleteClient";
 
 const clientRoutes = Router();
