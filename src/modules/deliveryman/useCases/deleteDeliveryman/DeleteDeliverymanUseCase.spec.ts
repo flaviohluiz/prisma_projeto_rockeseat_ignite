@@ -22,7 +22,7 @@ describe("Delete Delivery", () => {
         
         const deliverymanDeleted = await deleteDeliverymanUseCase.execute(deliverymanCreated.id);
         
-        expect(deliverymanDeleted).toHaveProperty("id");
+        expect(deliverymanDeleted).toBe(true);
     });
 
 });

@@ -14,8 +14,7 @@ describe("Authenticate Client", () => {
     beforeEach(() => {
         authenticateClientUseCase = new AuthenticateClientUseCase();
         createClientUseCase = new CreateClientUseCase();
-        deleteClientUseCase = new DeleteClientUseCase();
-        
+                
         client = {
             username: "authenticateClient",
             password: "authenticateClient",
@@ -67,6 +66,7 @@ describe("Authenticate Client", () => {
     });
 
     afterAll(async () => {
+        deleteClientUseCase = new DeleteClientUseCase();
         await deleteClientUseCase.execute(clientCreated.id);
     });
 });

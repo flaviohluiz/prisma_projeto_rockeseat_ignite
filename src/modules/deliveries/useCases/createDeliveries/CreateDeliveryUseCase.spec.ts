@@ -18,8 +18,7 @@ describe("Create Delivery", () => {
     beforeEach(() => {
         createDeliveryUseCase = new CreateDeliveryUseCase();
         createClientUseCase = new CreateClientUseCase();
-        deleteClientUseCase = new DeleteClientUseCase();
-        deleteDeliveryUseCase = new DeleteDeliveryUseCase();
+
         client = {
             username: "createDelivery",
             password: "createDelivery",
@@ -39,6 +38,9 @@ describe("Create Delivery", () => {
     });
 
     afterAll(async () => {
+        deleteClientUseCase = new DeleteClientUseCase();
+        deleteDeliveryUseCase = new DeleteDeliveryUseCase();
+        
         await deleteDeliveryUseCase.execute(deliveryCreated.id);
         await deleteClientUseCase.execute(clientCreated.id);
     });

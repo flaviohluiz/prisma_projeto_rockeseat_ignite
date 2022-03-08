@@ -22,7 +22,7 @@ describe("Delete Client", () => {
         
         const clientDeleted = await deleteClientUseCase.execute(clientCreated.id);
         
-        expect(clientDeleted).toHaveProperty("id");
+        expect(clientDeleted).toBe(true);
     });
 
 });

@@ -12,12 +12,11 @@ let clientCreated: Clients
 describe("Find All Client Deliveries", () => {
     beforeEach(() => {
         createClientUseCase = new CreateClientUseCase();
-        findAllDeliveriesUseCase = new FindAllDeliveriesClientUseCase();
-        deleteClientUseCase = new DeleteClientUseCase();
+        findAllDeliveriesUseCase = new FindAllDeliveriesClientUseCase();        
 
         client = {
-            username: "FindAllDeliveries",
-            password: "FindAllDeliveries", 
+            username: "FindAllClientDeliveries",
+            password: "FindAllClientDeliveries", 
         };
 
     });
@@ -27,12 +26,13 @@ describe("Find All Client Deliveries", () => {
 
         const findAllDeliveries = await findAllDeliveriesUseCase.execute(clientCreated.id);
 
-        console.log(typeof(findAllDeliveries));
+        //console.log(typeof(findAllDeliveries));
 
         //expect(findAllDeliveries);
     });
 
     afterAll(async () => {
+        deleteClientUseCase = new DeleteClientUseCase();
         await deleteClientUseCase.execute(clientCreated.id);
     });
 });

@@ -11,7 +11,7 @@ describe("Create Deliveryman", () => {
     
     beforeEach(() => {
         createDeliverymanUseCase = new CreateDeliverymanUseCase();
-        deleteDeliverymanUseCase = new DeleteDeliverymanUseCase();
+        
         deliveryman = {
             username: "createDeliveryman",
             password: "createDeliveryman"
@@ -43,6 +43,7 @@ describe("Create Deliveryman", () => {
 
 
     afterAll(async () => {
+        deleteDeliverymanUseCase = new DeleteDeliverymanUseCase();
         await deleteDeliverymanUseCase.execute(deliverymanCreated.id);
     });
 });
