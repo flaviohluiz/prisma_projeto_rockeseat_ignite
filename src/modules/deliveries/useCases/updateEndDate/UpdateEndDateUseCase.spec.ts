@@ -108,7 +108,5 @@ describe("Update End Date", () => {
         await deleteDeliveryUseCase.execute(deliveryCreated.id);
         await deleteClientUseCase.execute(secondClientCreated.id);
         await deleteDeliverymanUseCase.execute(secondDeliverymanCreated.id);         
-    });
-
-    
+    });    
 });

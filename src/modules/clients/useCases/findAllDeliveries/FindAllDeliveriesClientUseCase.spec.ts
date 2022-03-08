@@ -26,9 +26,7 @@ describe("Find All Client Deliveries", () => {
 
         const findAllDeliveries = await findAllDeliveriesUseCase.execute(clientCreated.id);
 
-        //console.log(typeof(findAllDeliveries));
-
-        //expect(findAllDeliveries);
+        expect(findAllDeliveries).toEqual([{deliveries: [], id: clientCreated.id, username: clientCreated.username}]);
     });
 
     afterAll(async () => {
