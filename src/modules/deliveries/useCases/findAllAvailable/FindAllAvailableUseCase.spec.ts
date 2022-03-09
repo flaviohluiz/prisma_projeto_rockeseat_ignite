@@ -11,8 +11,9 @@ describe("Find All Available Deliveries", () => {
     it("should be able to show all available deliveries", async () => {
         const findAllAvailable = findAllAvailableUseCase.execute();
 
-        console.log("find All available", typeof(findAllAvailable), findAllAvailable);
+        //console.log("find all available:  ", "tipo:", typeof(findAllAvailable), findAllAvailable);
 
-        //expect(findAllAvailable).toHaveProperty("Promise");
+        //expect(findAllAvailable).toHaveProperty("Deliveries[]");
+        //expect(findAllAvailable).toBe();
     });
 });

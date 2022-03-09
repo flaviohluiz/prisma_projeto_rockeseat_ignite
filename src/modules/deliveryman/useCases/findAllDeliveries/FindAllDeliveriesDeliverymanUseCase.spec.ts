@@ -27,8 +27,8 @@ describe("Find All Deliveryman Deliveries", () => {
         deliverymanCreated = await createDeliverymanUseCase.execute(deliveryman);
 
         const findAllDeliveries = await findAllDeliveriesDeliverymanUseCase.execute(deliverymanCreated.id);
-
-        //expect(findAllDeliveries)
+       
+        expect(findAllDeliveries).toEqual([{deliveries:[], id: deliverymanCreated.id, username: deliverymanCreated.username}])
     });
 
     afterAll(async () => {
