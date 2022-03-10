@@ -7,6 +7,7 @@ import { findAllAvailableController } from "../modules/deliveries/useCases/findA
 import { updateDeliverymancontroller } from "../modules/deliveries/useCases/updateDeliveryman/useCases";
 import { updateEndDateController } from "../modules/deliveries/useCases/updateEndDate";
 
+
 const deliveryRoutes = Router();
 
 deliveryRoutes.post("/", ensureAuthenticateClient, createDeliveryController.handle);

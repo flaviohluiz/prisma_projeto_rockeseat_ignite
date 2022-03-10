@@ -12,5 +12,5 @@ export class FindAllAvailableUseCase{
         });
 
         return deliveries;
-    }
-}
+    };
+};
